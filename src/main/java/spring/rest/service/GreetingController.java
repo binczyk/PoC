@@ -1,4 +1,4 @@
-package spring.rest;
+package spring.rest.service;
 
 import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;

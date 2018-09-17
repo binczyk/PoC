@@ -1,4 +1,4 @@
-package spring.rest;
+package spring.rest.service;
 
 
 import lombok.EqualsAndHashCode;

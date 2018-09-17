@@ -1,4 +1,4 @@
-package spring.soap;
+package spring.soap.service;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
