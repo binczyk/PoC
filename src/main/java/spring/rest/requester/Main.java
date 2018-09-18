@@ -8,5 +8,6 @@ public class Main {
         System.out.println(Requester.getGreetings().toString());
         System.out.println(Requester.getGreetings(Optional.of("Daniel")).toString());
         System.out.println(Requester.getGreetings(Optional.of("")).toString());
+        System.out.println(Requester.getGreetings(Optional.ofNullable(null)).toString());
     }
 }
