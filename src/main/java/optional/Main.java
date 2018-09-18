@@ -21,5 +21,7 @@ public class Main {
         nullOptional = Optional.ofNullable("dupa 123321");
         System.out.println(nullOptional.filter(s -> s.contains("321")).map(String::toUpperCase));
         System.out.println(nullOptional.filter(s -> s.contains("3213")).map(String::toUpperCase));
+        nullOptional = Optional.empty();
+        System.out.println(nullOptional.get());
     }
 }
