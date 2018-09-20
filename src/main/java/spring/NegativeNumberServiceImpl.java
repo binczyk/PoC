@@ -3,7 +3,7 @@ package spring;
 import org.springframework.stereotype.Component;
 
 @Component
-public class NegativeNumberServiceImpl implements TestService {
+public class NegativeNumberServiceImpl implements NumberService {
 
     @Override
     public void printNumber() {

@@ -1,5 +1,5 @@
 package spring;
 
-public interface TestService {
+public interface NumberService {
     void printNumber();
 }

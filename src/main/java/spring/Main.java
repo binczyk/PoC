@@ -11,11 +11,11 @@ public class Main implements CommandLineRunner {
 
     @Qualifier("positiveNumberServiceImpl")
     @Autowired
-    private TestService positiveService;
+    private NumberService positiveService;
 
     @Qualifier("negativeNumberServiceImpl")
     @Autowired
-    private TestService negativeService;
+    private NumberService negativeService;
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
