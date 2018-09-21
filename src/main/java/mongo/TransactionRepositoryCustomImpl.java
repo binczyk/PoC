@@ -9,7 +9,9 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class TransactionRepositoryCustomImpl implements TransactionRepositoryCustom {
@@ -27,8 +29,19 @@ public class TransactionRepositoryCustomImpl implements TransactionRepositoryCus
         query.with(new Sort(Direction.ASC, "date"));
         List<Transaction> transactions = mongoTemplate.find(query, Transaction.class);
         transactions.forEach(transaction -> transaction.setSender(account));
-        transactions.forEach(transaction -> transaction
-                .setRecipient(accountRepository.findByLogin(transaction.getAccount2())));
+        addRecipient(transactions);
+
         return transactions;
+    }
+
+    private void addRecipient(List<Transaction> transactions) {
+        Map<String, Account> accountMap = new HashMap<>();
+        for (Transaction transaction : transactions) {
+            String recipientId = transaction.getAccount2();
+            if (!accountMap.containsKey(recipientId)) {
+                accountMap.put(recipientId, accountRepository.findByLogin(recipientId));
+            }
+        }
+        transactions.forEach(transaction -> transaction.setRecipient(accountMap.get(transaction.getAccount2())));
     }
 }
