@@ -55,6 +55,7 @@ configurations {
 bootJar {
     baseName = 'gs-rest-service'
     baseName = 'gs-producing-web-service'
+    baseName = 'gs-accessing-data-mongodb'
     version = '0.1.0'
     from genJaxb.classesDir
 }
@@ -82,7 +83,7 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.0.5.RELEASE'
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
-
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
     compile("org.springframework.boot:spring-boot-starter-web-services")
     testCompile("org.springframework.boot:spring-boot-starter-test")
     compile("wsdl4j:wsdl4j:1.6.1")
