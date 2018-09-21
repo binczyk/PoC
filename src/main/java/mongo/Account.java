@@ -1,15 +1,13 @@
 package mongo;
 
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "accounts")
-@ToString
-@Getter
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-@EqualsAndHashCode
+@Document(collection = "accounts")
 public class Account {
 
     @Id

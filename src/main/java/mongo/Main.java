@@ -24,7 +24,8 @@ public class Main implements CommandLineRunner {
         System.out.println(account.toString());
 
         accountRepository.findByRoleOrderByLoginDesc("employee").forEach(System.out::println);
-
-        transactionRepository.findByAccountLoginOrderByDate("bob").forEach(System.out::println);
+        System.out.println("----------------------------------");
+        transactionRepository.findByAccountLogin("bob").forEach(System.out::println);
+        System.out.println("----------------------------------");
     }
 }
