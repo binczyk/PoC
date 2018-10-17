@@ -7,9 +7,9 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 @Configuration
 public class MongoConfiguration extends AbstractMongoConfiguration {
 
-    private final String DB_NAME = "bank";
-    private final String HOST = "127.0.0.1";
-    private final int PORT = 27017;
+    private static final String DB_NAME = "bank";
+    private static final String HOST = "127.0.0.1";
+    private static final int PORT = 27017;
 
     @Override
     public MongoClient mongoClient() {
